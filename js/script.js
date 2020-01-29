@@ -12,9 +12,13 @@ $(document).ready(function(){
 //    $(this).hide();
 //});
 
-//When a panel is clicked, all siblings fade to 10% opacity
+//When a panel is clicked, all siblings fade to 10% opacity 
+//and also will display rgb value of selected panel in the reset button
 $('.theButton').click(function() {
     $('#panel .container').siblings().fadeTo('slow',0.2);
+    $(this).removeClass('makeBlack');
+    var selectedColor = $(this).css('background-color');
+    $('.superButton').text(selectedColor);
 });
 
 //When reset is clicked, all panels revert to full opacity
